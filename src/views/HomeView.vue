@@ -1,5 +1,6 @@
 <script setup>
 import { fetchIndustryDistribution } from "@/api/industryDistribution";
+import WtAgeDistribution from "@/components/WtAgeDistribution.vue";
 import WtEmploymentIndustry from "@/components/WtEmploymentIndustry.vue";
 import WtPersonnelChangeData from "@/components/WtPersonnelChangeData.vue";
 import { useIndustryDistribution } from "@/stores/industryDistribution";
@@ -25,7 +26,7 @@ onMounted(() => {
           <WtPersonnelChangeData />
         </el-row>
         <el-row class="col-item-wrap">
-          <div class="grid-content ep-bg-purple">1</div>
+          <WtAgeDistribution />
         </el-row>
       </el-col>
       <el-col :span="12" class="col"><div class="grid-content ep-bg-purple">2</div></el-col>

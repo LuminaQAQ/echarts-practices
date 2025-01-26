@@ -1,6 +1,6 @@
 <script setup>
-import VChart, { THEME_KEY } from "vue-echarts";
-import { onMounted, provide, reactive, ref, watch } from "vue";
+import VChart from "vue-echarts";
+import { onMounted, reactive, ref, watch } from "vue";
 import { useIndustryDistribution } from "@/stores/industryDistribution";
 
 const industryDistribution = useIndustryDistribution();
