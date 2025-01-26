@@ -3,6 +3,7 @@ import { fetchIndustryDistribution } from "@/api/industryDistribution";
 import WtAgeDistribution from "@/components/WtAgeDistribution.vue";
 import WtEmploymentIndustry from "@/components/WtEmploymentIndustry.vue";
 import WtPersonnelChangeData from "@/components/WtPersonnelChangeData.vue";
+import WtSkill from "@/components/WtSkill.vue";
 import { useIndustryDistribution } from "@/stores/industryDistribution";
 import { onMounted } from "vue";
 
@@ -11,6 +12,11 @@ onMounted(() => {
   fetchIndustryDistribution().then((res) => {
     industryDistribution.data = res.data;
   });
+  setInterval(() => {
+    fetchIndustryDistribution().then((res) => {
+      industryDistribution.data = res.data;
+    });
+  }, 3000);
 });
 // industryDistribution.setData();
 </script>
@@ -30,7 +36,17 @@ onMounted(() => {
         </el-row>
       </el-col>
       <el-col :span="12" class="col"><div class="grid-content ep-bg-purple">2</div></el-col>
-      <el-col :span="6" class="col"><div class="grid-content ep-bg-purple">3</div></el-col>
+      <el-col :span="6" class="col">
+        <el-row class="col-item-wrap">
+          <WtSkill />
+        </el-row>
+        <el-row class="col-item-wrap">
+          <WtPersonnelChangeData />
+        </el-row>
+        <el-row class="col-item-wrap">
+          <WtAgeDistribution />
+        </el-row>
+      </el-col>
     </el-row>
   </section>
 </template>

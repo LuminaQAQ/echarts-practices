@@ -29,9 +29,9 @@ const option = {
   "skillData": {
     "html5": '@integer(50, 100)',
     "css3": '@integer(50, 100)',
-    "javascript": '@integer(50, 100)',
+    "js": '@integer(50, 100)',
     "vue": '@integer(50, 100)',
-    "nodejs": '@integer(50, 100)'
+    "node": '@integer(50, 100)'
   },
   "playbackData": {
     "views": '@range(0, 150, 30)',

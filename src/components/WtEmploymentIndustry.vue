@@ -10,7 +10,7 @@ const chart = ref(null);
 const option = reactive({
   title: {
     text: "就业行业",
-    subtext: "单位：人",
+    subtext: "单位：万人",
     left: "center",
     textStyle: {
       color: "white",
