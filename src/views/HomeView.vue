@@ -1,6 +1,7 @@
 <script setup>
 import { fetchIndustryDistribution } from "@/api/industryDistribution";
 import WtEmploymentIndustry from "@/components/WtEmploymentIndustry.vue";
+import WtPersonnelChangeData from "@/components/WtPersonnelChangeData.vue";
 import { useIndustryDistribution } from "@/stores/industryDistribution";
 import { onMounted } from "vue";
 
@@ -19,10 +20,9 @@ onMounted(() => {
       <el-col :span="6" class="col">
         <el-row class="col-item-wrap">
           <WtEmploymentIndustry />
-          <!-- <WtRainPrecip /> -->
         </el-row>
         <el-row class="col-item-wrap">
-          <!-- <WtTemperature /> -->
+          <WtPersonnelChangeData />
         </el-row>
         <el-row class="col-item-wrap">
           <div class="grid-content ep-bg-purple">1</div>

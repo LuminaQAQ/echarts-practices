@@ -16,8 +16,8 @@ const option = {
     "finance": '@integer(100, 300)'
   },
   "personnelChangeData": {
-    "newHires": '@range(0, 1500, 12)',
-    "resignations": '@range(0, 500, 12)'
+    "newHires|12": ['@integer(300, 600)'],
+    "resignations|12": ['@integer(0, 250)']
   },
   "ageDistributionData": {
     "under20": '@float(5, 20, 0, 2)',

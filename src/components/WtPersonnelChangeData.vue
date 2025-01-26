@@ -1,6 +1,6 @@
 <script setup>
-import VChart from "vue-echarts";
-import { onMounted, reactive, ref, watch } from "vue";
+import VChart, { THEME_KEY } from "vue-echarts";
+import { onMounted, provide, reactive, ref, watch } from "vue";
 import { useIndustryDistribution } from "@/stores/industryDistribution";
 
 const industryDistribution = useIndustryDistribution();
@@ -8,8 +8,9 @@ const industryDistribution = useIndustryDistribution();
 const chart = ref(null);
 
 const option = reactive({
+  theme: "dark",
   title: {
-    text: "就业行业",
+    text: "人员变化",
     subtext: "单位：人",
     left: "center",
     textStyle: {
@@ -21,7 +22,20 @@ const option = reactive({
   },
   xAxis: {
     type: "category",
-    data: [],
+    data: [
+      "一月",
+      "二月",
+      "三月",
+      "四月",
+      "五月",
+      "六月",
+      "七月",
+      "八月",
+      "九月",
+      "十月",
+      "十一月",
+      "十二月",
+    ],
     axisLabel: {
       color: "white",
     },
@@ -32,29 +46,32 @@ const option = reactive({
     },
   },
   tooltip: {},
+  legend: {
+    data: ["新增人员", "减少人员"],
+    bottom: "bottom",
+    textStyle: {
+      color: "white",
+    },
+  },
   series: [
     {
-      type: "bar",
+      name: "新增人员",
+      type: "line",
+      data: [],
+    },
+    {
+      name: "减少人员",
+      type: "line",
       data: [],
     },
   ],
 });
 
-const translate = {
-  tourism: "旅游行业",
-  education: "教育行业",
-  gaming: "游戏行业",
-  healthcare: "医疗保健行业",
-  ecommerce: "电子商务行业",
-  social: "社交行业",
-  finance: "金融行业",
-};
-
 watch(industryDistribution, () => {
   if (industryDistribution.data) {
-    const { industryData } = industryDistribution.data;
-    option.xAxis.data = Object.keys(industryData).map((item) => translate[item]);
-    option.series[0].data = Object.values(industryData);
+    const { newHires, resignations } = industryDistribution.data.personnelChangeData;
+    option.series[0].data = newHires;
+    option.series[1].data = resignations;
   }
 });
 
