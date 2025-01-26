@@ -41,10 +41,10 @@ onMounted(() => {
           <WtSkill />
         </el-row>
         <el-row class="col-item-wrap">
-          <WtPersonnelChangeData />
+          <!-- <WtPersonnelChangeData /> -->
         </el-row>
         <el-row class="col-item-wrap">
-          <WtAgeDistribution />
+          <!-- <WtAgeDistribution /> -->
         </el-row>
       </el-col>
     </el-row>
