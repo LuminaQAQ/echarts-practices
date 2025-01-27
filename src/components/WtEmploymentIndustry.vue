@@ -71,6 +71,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .chart {
-  height: 100%;
+  height: 120%;
 }
 </style>

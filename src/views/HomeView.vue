@@ -1,7 +1,9 @@
 <script setup>
 import { fetchIndustryDistribution } from "@/api/industryDistribution";
 import WtAgeDistribution from "@/components/WtAgeDistribution.vue";
+import WtDemandSupplyChart from "@/components/WtDemandSupplyChart.vue";
 import WtEmploymentIndustry from "@/components/WtEmploymentIndustry.vue";
+import WtMapChart from "@/components/WtMapChart.vue";
 import WtPersonnelChangeData from "@/components/WtPersonnelChangeData.vue";
 import WtPlaybackChart from "@/components/WtPlaybackChart.vue";
 import WtRegionDistributionChart from "@/components/WtRegionDistributionChart.vue";
@@ -37,7 +39,10 @@ onMounted(() => {
           <WtAgeDistribution />
         </el-row>
       </el-col>
-      <el-col :span="12" class="col"><div class="grid-content ep-bg-purple">2</div></el-col>
+      <el-col :span="12" class="col">
+        <WtDemandSupplyChart />
+        <WtMapChart />
+      </el-col>
       <el-col :span="6" class="col">
         <el-row class="col-item-wrap">
           <WtSkill />

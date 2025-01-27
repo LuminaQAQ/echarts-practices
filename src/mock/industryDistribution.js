@@ -62,8 +62,8 @@ const option = {
     //   "name": "Chengdu",
     //   "connections": '@integer(1, 10)'
     //   }]
-    "cities|6": [{
-      'name': '@city(true)',
+    "cities|34": [{
+      'name': '@province(true)',
       "connections": '@integer(1, 10)'
     }]
   }

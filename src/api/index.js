@@ -1,3 +1,3 @@
 export const apiList = {
-  industryDistribution: "/api/industryDistribution"
+  industryDistribution: "/api/industryDistribution",
 }
