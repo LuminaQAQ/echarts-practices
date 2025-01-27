@@ -3,6 +3,7 @@ import { fetchIndustryDistribution } from "@/api/industryDistribution";
 import WtAgeDistribution from "@/components/WtAgeDistribution.vue";
 import WtEmploymentIndustry from "@/components/WtEmploymentIndustry.vue";
 import WtPersonnelChangeData from "@/components/WtPersonnelChangeData.vue";
+import WtPlaybackChart from "@/components/WtPlaybackChart.vue";
 import WtSkill from "@/components/WtSkill.vue";
 import { useIndustryDistribution } from "@/stores/industryDistribution";
 import { onMounted } from "vue";
@@ -41,7 +42,7 @@ onMounted(() => {
           <WtSkill />
         </el-row>
         <el-row class="col-item-wrap">
-          <!-- <WtPersonnelChangeData /> -->
+          <WtPlaybackChart />
         </el-row>
         <el-row class="col-item-wrap">
           <!-- <WtAgeDistribution /> -->

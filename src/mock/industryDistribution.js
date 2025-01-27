@@ -34,8 +34,8 @@ const option = {
     "node": '@integer(50, 100)'
   },
   "playbackData": {
-    "views": '@range(0, 150, 30)',
-    "shares": '@range(0, 50, 30)'
+    "views|30": ['@integer(0, 100)'],
+    "shares|30": ['@integer(0, 100)']
   },
   "regionDistributionData|7": [{
     'region': '@province(true)',
